@@ -1,17 +1,23 @@
 <header>
-  <nav>
+  <nav *ngIf="auth.authenticated()">
     <a [routerLink]="['']">Home</a>
     <a [routerLink]="['about']">About</a>
+    <a [routerLink]="['profile']">Profile</a>
   </nav>
 </header>
 <main>
-  <h1>Hello from {{api.title}}!</h1>
+  <h1>Welcome to the user!</h1>
 
   <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/angular.png">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Auth0 - Angular 2</a>
+    <button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+    <br>
+    <button class="btn btn-primary btn-margin" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
+  </div>
 
   <router-outlet></router-outlet>
 </main>
 <footer>
-  <a [href]="url">Webpack Angular 2 Starter</a>
+
 </footer>

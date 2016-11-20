@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService, Auth } from '../shared';
 
 @Component({
   selector: 'my-home',
