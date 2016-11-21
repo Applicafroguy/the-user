@@ -1,16 +1,16 @@
 <header>
   <nav *ngIf="auth.authenticated()">
-    <a [routerLink]="['']">Home</a>
-    <a [routerLink]="['about']">About</a>
-    <a [routerLink]="['profile']">Profile</a>
+    <a class="btn btn-primary btn-margin" [routerLink]="['']">Home</a>
+    <a class="btn btn-primary btn-margin" [routerLink]="['about']">About</a>
+    <a class="btn btn-primary btn-margin" [routerLink]="['profile']">Profile</a>
   </nav>
 </header>
 <main>
-  <h1>Welcome to the user!</h1>
 
   <!-- Images (and assets) are parsed and loaded from within the public directory -->
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">Auth0 - Angular 2</a>
+     <h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
+      <h4 *ngIf="auth.authenticated()">To logout in, please click 'Log out' button to logout</h4>
     <button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
     <br>
     <button class="btn btn-primary btn-margin" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
