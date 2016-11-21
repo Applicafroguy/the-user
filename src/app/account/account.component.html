@@ -1,8 +1,8 @@
-<div *ngIf="auth.authenticated() && auth.userProfile">
+<!--<div *ngIf="auth.authenticated() && auth.userProfile">
     <h4>You are logged in</h4>
     <div class="row">
       <div class="col-md-6">
-        <h3>Profile</h3>
+        
         <img [src]="auth.userProfile.picture" alt="" class="profile-img">
         <p><strong>Name: </strong> {{auth.userProfile.name}}</p>
         <p><strong>Email: </strong> {{auth.userProfile.email}}</p>
@@ -11,5 +11,49 @@
         <p><strong>Updated At: </strong> {{auth.userProfile.updated_at}}</p>
       </div>
     </div>
-  </div>
+  </div>-->
+
+<h3>Profile</h3>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container" *ngIf="auth.authenticated() && auth.userProfile">
+	<div class="row">
+		<div class="col-lg-3 col-sm-6">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img alt="" [src]="auth.userProfile.picture" height="100" width="100">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="#">{{auth.userProfile.name}}</a>
+                    </div>
+                    <!--<div class="desc">Passionate designer</div>
+                    <div class="desc">Curious developer</div>
+                    <div class="desc">Tech geek</div>-->
+                </div>
+                <div class="bottom">
+                    <a class="btn btn-primary btn-twitter btn-sm" href="#">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm" rel="publisher"
+                       href="#">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                    <a class="btn btn-primary btn-sm" rel="publisher"
+                       href="#">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="btn btn-warning btn-sm" rel="publisher" href="#">
+                        <i class="fa fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+	</div>
+</div>
   <h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>

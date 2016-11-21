@@ -8,7 +8,7 @@ import { ApiService, Auth } from '../shared';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  constructor(private auth: Auth) {
     // Do stuff
   }
 
