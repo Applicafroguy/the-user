@@ -4,8 +4,7 @@
 
 
 ### Quick start
-
-> Clone/Download the repo then edit `app.ts` inside [`/src/app/app.component.ts`](/src/app/app.component.ts)
+Coming soon
 
 # clone our repo
 $ git clone 
